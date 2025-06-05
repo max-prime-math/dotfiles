@@ -27,15 +27,19 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Essentials
 Plug 'nvim-telescope/telescope.nvim' " Fuzzy finder
-Plug 'nvim-lua/plenary.nvim'         " Dependency for telescope
-Plug 'mg979/vim-visual-multi'        " Multi-cursor editing
-Plug 'morhetz/gruvbox'               " Nice colorscheme
-Plug 'lervag/vimtex'
-Plug 'nvim-tree/nvim-tree.lua'
-Plug 'nvim-tree/nvim-web-devicons'  " optional: for icons
-Plug 'HakonHarnes/img-clip.nvim'
-Plug 'sphamba/smear-cursor.nvim'
-Plug 'tpope/vim-fugitive'
+Plug 'nvim-lua/plenary.nvim' " Dependency for telescope
+Plug 'mg979/vim-visual-multi' " Multi-cursor editing
+Plug 'morhetz/gruvbox' " Nice colorscheme
+Plug 'lervag/vimtex' " LaTeX in nvim
+Plug 'nvim-tree/nvim-tree.lua' " File explorer
+Plug 'romgrk/barbar.nvim' " Statusbar
+Plug 'nvim-tree/nvim-web-devicons' " optional: for icons
+Plug 'nvim-treesitter/nvim-treesitter' "improved syntax
+Plug 'mfussenegger/nvim-lint' " linter
+Plug 'windwp/nvim-autopairs' " autopairs
+Plug 'HakonHarnes/img-clip.nvim' " paste images
+Plug 'sphamba/smear-cursor.nvim' " animated cursor
+Plug 'tpope/vim-fugitive' "
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'folke/snacks.nvim'
 Plug 'numToStr/Comment.nvim'
@@ -44,7 +48,7 @@ call plug#end()
 " --- Plugin Settings ---
 colorscheme gruvbox
 let g:VM_maps = {}
-let g:VM_maps['Find Under'] = '<Leader>m'  " Safer keybinding
+let g:VM_maps['Find Under'] = '<Leader>'  " Safer keybinding
 lua require('Comment').setup()
 
 " --- VimTeX & Sumatra ---
