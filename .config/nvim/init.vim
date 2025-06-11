@@ -16,9 +16,6 @@ let g:vimtex_enabled = 1
 " let mapleader = ","
 
 " --- Basic keymaps ---
-nnoremap <Leader>w :w<CR>    " Save file
-nnoremap <Leader>q :q<CR>    " Quit
-nnoremap <Leader>x :x<CR>    " Save and quit
 nnoremap <Leader>h :nohlsearch<CR> " Clear search highlight
 nnoremap <Leader>t :NvimTreeToggle<CR> " Toggle NvimTree
 
@@ -30,6 +27,8 @@ Plug 'nvim-telescope/telescope.nvim' " Fuzzy finder
 Plug 'nvim-lua/plenary.nvim' " Dependency for telescope
 Plug 'mg979/vim-visual-multi' " Multi-cursor editing
 Plug 'morhetz/gruvbox' " Nice colorscheme
+Plug 'sts10/vim-pink-moon' " Another colorscheme
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'lervag/vimtex' " LaTeX in nvim
 Plug 'nvim-tree/nvim-tree.lua' " File explorer
 Plug 'romgrk/barbar.nvim' " Statusbar
@@ -46,11 +45,10 @@ Plug 'numToStr/Comment.nvim'
 call plug#end()
 
 " --- Plugin Settings ---
-colorscheme gruvbox
+colorscheme catppuccin-frappe 
 let g:VM_maps = {}
 let g:VM_maps['Find Under'] = '<Leader>'  " Safer keybinding
 lua require('Comment').setup()
-
 " --- VimTeX & Sumatra ---
 let g:vimtex_view_general_viewer = 'SumatraPDF'
 let g:vimtex_view_general_options

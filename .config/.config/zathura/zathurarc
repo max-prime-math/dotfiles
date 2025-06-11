@@ -1,0 +1,27 @@
+set recolor true
+set recolor-keephue true
+
+# UI and background colors
+set default-bg "#1e1e2e"        # background of viewer
+set default-fg "#cdd6f4"        # default text color
+
+# Recoloring (actual PDF content)
+set recolor-darkcolor "#ebdbb2"   # Gruvbox light beige (text)
+set recolor-lightcolor  "#282828"   # Gruvbox dark background (page)
+
+# Highlight color
+set highlight-color "#f38ba8"
+set highlight-active-color "#89b4fa"
+
+# Links and search
+set adjust-open "best-fit"
+set selection-clipboard clipboard
+set statusbar-home-tilde true
+
+set recolor true
+
+# Fit the PDF to window width on open
+set adjust-open "width"
+
+# Disable last edit highlight (if unwanted)
+set highlight false
