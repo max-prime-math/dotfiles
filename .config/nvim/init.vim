@@ -39,8 +39,8 @@ Plug 'mfussenegger/nvim-lint' " linter
 Plug 'windwp/nvim-autopairs' " autopairs
 Plug 'HakonHarnes/img-clip.nvim' " paste images
 Plug 'sphamba/smear-cursor.nvim' " animated cursor
-Plug 'tpope/vim-fugitive' "
-Plug 'lewis6991/gitsigns.nvim'
+Plug 'tpope/vim-fugitive' "git in nvim
+Plug 'lewis6991/gitsigns.nvim' "git symbols
 Plug 'folke/snacks.nvim'
 Plug 'numToStr/Comment.nvim'
 call plug#end()
