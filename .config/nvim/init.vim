@@ -21,6 +21,7 @@ nnoremap <Leader>q :q<CR>    " Quit
 nnoremap <Leader>x :x<CR>    " Save and quit
 nnoremap <Leader>h :nohlsearch<CR> " Clear search highlight
 nnoremap <Leader>t :NvimTreeToggle<CR> " Toggle NvimTree
+nnoremap <Leader>b :TeXpresso %<CR> "Start TeXpresso
 
 " --- Plugin Manager (vim-plug) ---
 call plug#begin('~/.config/nvim/plugged')
@@ -52,11 +53,12 @@ let g:VM_maps['Find Under'] = '<Leader>'  " Safer keybinding
 lua require('Comment').setup()
 
 " --- VimTeX & Sumatra ---
-let g:vimtex_view_general_viewer = 'SumatraPDF'
+let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_view_general_options
       \ = '-reuse-instance -forward-search @tex @line @pdf'
 " let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 let g:vimtex_compiler_method = 'latexmk'
+let g:vimtex_format_enabled = true
 
 lua << EOF
 local function on_attach(bufnr)
