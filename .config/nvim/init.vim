@@ -23,6 +23,9 @@ nnoremap <Leader>h :nohlsearch<CR> " Clear search highlight
 nnoremap <Leader>t :NvimTreeToggle<CR> " Toggle NvimTree
 nnoremap <Leader>b :TeXpresso %<CR> "Start TeXpresso
 
+" Disable built-in matchparen
+let g:loaded_matchparen = 1
+
 " --- Plugin Manager (vim-plug) ---
 call plug#begin('~/.config/nvim/plugged')
 
@@ -44,7 +47,15 @@ Plug 'tpope/vim-fugitive' "git in nvim
 Plug 'lewis6991/gitsigns.nvim' "git symbols
 Plug 'folke/snacks.nvim'
 Plug 'numToStr/Comment.nvim'
+Plug 'monkoose/matchparen.nvim'
 call plug#end()
+
+
+" Plugin config
+lua << EOF
+require("matchparen").setup()
+EOF
+
 
 " --- Plugin Settings ---
 colorscheme gruvbox
@@ -52,13 +63,14 @@ let g:VM_maps = {}
 let g:VM_maps['Find Under'] = '<Leader>'  " Safer keybinding
 lua require('Comment').setup()
 
-" --- VimTeX & Sumatra ---
-let g:vimtex_view_general_viewer = 'zathura'
-let g:vimtex_view_general_options
-      \ = '-reuse-instance -forward-search @tex @line @pdf'
-" let g:vimtex_view_general_options_latexmk = '-reuse-instance'
+" --- VimTeX ---
+
+let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_method = 'latexmk'
-let g:vimtex_format_enabled = true
+autocmd FileType qf wincmd J | resize 5
+let g:vimtex_quickfix_open_on_warning = 0
+let g:vimtex_quickfix_open_on_error = 1
+
 
 lua << EOF
 local function on_attach(bufnr)
@@ -75,6 +87,11 @@ local function on_attach(bufnr)
 end
 
 require("nvim-tree").setup({
+git = {
+    enable = true,
+    ignore = false,
+  },
+
   filters = {
     dotfiles = true,
     custom = {
@@ -83,7 +100,8 @@ require("nvim-tree").setup({
       "*.out",
       "*.fls",
       "*.gz",
-      "*latexmk"
+      "*.fdb_latexmk",
+      "*.dvi"
     },
   },
   view = {
