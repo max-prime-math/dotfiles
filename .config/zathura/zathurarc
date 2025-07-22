@@ -1,0 +1,11 @@
+set adjust-open "width"
+
+set save-position false  # Disable reopening at old zoom or page
+
+map <C-r> toggle recolor
+map <C-z> set adjust-open width
+map [normal] = zoom in
+map [normal] - zoom out
+
+set selection-clipboard clipboard
+include zathura-gruvbox-dark
