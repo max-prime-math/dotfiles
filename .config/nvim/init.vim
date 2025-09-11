@@ -50,7 +50,7 @@ let g:VM_maps = {}
 let g:VM_maps['Find Under'] = '<Leader>'  " Safer keybinding
 lua require('Comment').setup()
 " --- VimTeX & Sumatra ---
-let g:vimtex_view_general_viewer = 'SumatraPDF'
+let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_view_general_options
       \ = '-reuse-instance -forward-search @tex @line @pdf'
 " let g:vimtex_view_general_options_latexmk = '-reuse-instance'
